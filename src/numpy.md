@@ -263,8 +263,7 @@
           [  4, 999,   5,   6, 999,   7]])
    ```
 
-7. `np.unique(ar, return_index=False, return_inverse=False,
-    return_counts=False, axis=None, *, equal_nan=True)`:
+7. `np.unique(ar, return_index=False, return_inverse=False,    return_counts=False, axis=None, *, equal_nan=True)`:
 
    ```python
     Find the unique elements of an array.
@@ -371,3 +370,5 @@
     >>> np.repeat(values, counts)
     array([1, 2, 2, 2, 3, 4, 6])    # original order not preserved
    ```
+
+8. `np.math.ceil()`:在Python中，math模块包含许多数学运算，可以使用该模块轻松地执行这些运算。函数Math.ceil(x)返回大于数字x的最小整数值。如果number已经是整数，则返回相同的数字。
