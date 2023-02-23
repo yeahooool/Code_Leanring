@@ -1,0 +1,582 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Python | numpy - Blog</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="blog">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">简介</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> Python | 常用数据操作函数和方法</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="os.html"><strong aria-hidden="true">1.1.</strong> Python | os</a></li><li class="chapter-item expanded "><a href="open.html"><strong aria-hidden="true">1.2.</strong> Python | with open() as f</a></li><li class="chapter-item expanded "><a href="subprocess.html"><strong aria-hidden="true">1.3.</strong> Python | subprocess</a></li><li class="chapter-item expanded "><a href="enumerate.html"><strong aria-hidden="true">1.4.</strong> Python | enumerate()</a></li><li class="chapter-item expanded "><a href="numpy.html" class="active"><strong aria-hidden="true">1.5.</strong> Python | numpy</a></li><li class="chapter-item expanded "><a href="torch.html"><strong aria-hidden="true">1.6.</strong> Python | torch</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Blog</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="import-numpy-as-np"><a class="header" href="#import-numpy-as-np">import numpy as np</a></h1>
+<ol>
+<li>
+<p><code>np.linalg.det()</code>: numpy.linalg --- NumPy 的线性代数函数; linalg.det 计算一个数组的行列式。</p>
+<pre><code class="language-python"> Examples
+ --------
+ The determinant of a 2-D array [[a, b], [c, d]] is ad - bc:
+
+ &gt;&gt;&gt; a = np.array([[1, 2], [3, 4]])
+ &gt;&gt;&gt; np.linalg.det(a)
+ -2.0 # may vary
+
+ Computing determinants for a stack of matrices:
+
+ &gt;&gt;&gt; a = np.array([ [[1, 2], [3, 4]], [[1, 2], [2, 1]], [[1, 3], [3, 1]] ])
+ &gt;&gt;&gt; a.shape
+ (3, 2, 2)
+ &gt;&gt;&gt; np.linalg.det(a)
+ array([-2., -3., -8.])
+</code></pre>
+</li>
+<li>
+<p><code>np.save(file, arr, allow_pickle=True, fix_imports=True)</code>:</p>
+<pre><code class="language-python"> Save an array to a binary file in NumPy ``.npy`` format.
+
+ Parameters
+ ----------
+ file : file, str, or pathlib.Path
+     File or filename to which the data is saved.  If file is a file-object,
+     then the filename is unchanged.  If file is a string or Path, a ``.npy``
+     extension will be appended to the filename if it does not already
+     have one.
+ arr : array_like
+     Array data to be saved.
+ allow_pickle : bool, optional
+     Allow saving object arrays using Python pickles. Reasons for disallowing
+     pickles include security (loading pickled data can execute arbitrary
+     code) and portability (pickled objects may not be loadable on different
+     Python installations, for example if the stored objects require libraries
+     that are not available, and not all pickled data is compatible between
+     Python 2 and Python 3).
+     Default: True
+ fix_imports : bool, optional
+     Only useful in forcing objects in object arrays on Python 3 to be
+     pickled in a Python 2 compatible way. If `fix_imports` is True, pickle
+     will try to map the new Python 3 names to the old module names used in
+     Python 2, so that the pickle data stream is readable with Python 2.
+
+ See Also
+ --------
+ savez : Save several arrays into a ``.npz`` archive
+ savetxt, load
+
+ Notes
+ -----
+ For a description of the ``.npy`` format, see :py:mod:`numpy.lib.format`.
+
+ Any data saved to the file is appended to the end of the file.
+</code></pre>
+</li>
+<li>
+<p><code>np.tile(A, reps)</code>:</p>
+<pre><code class="language-python">Construct an array by repeating A the number of times given by reps.
+Parameters
+----------
+A : array_like
+    The input array.
+reps : array_like
+    The number of repetitions of `A` along each axis.
+
+Returns
+-------
+c : ndarray
+    The tiled output array.
+
+See Also
+--------
+repeat : Repeat elements of an array.
+broadcast_to : Broadcast an array to a new shape
+
+Examples
+--------
+&gt;&gt;&gt; a = np.array([0, 1, 2])
+&gt;&gt;&gt; np.tile(a, 2)
+array([0, 1, 2, 0, 1, 2])
+&gt;&gt;&gt; np.tile(a, (2, 2))
+array([[0, 1, 2, 0, 1, 2],
+       [0, 1, 2, 0, 1, 2]])
+&gt;&gt;&gt; np.tile(a, (2, 1, 2))
+array([[[0, 1, 2, 0, 1, 2]],
+       [[0, 1, 2, 0, 1, 2]]])
+
+&gt;&gt;&gt; b = np.array([[1, 2], [3, 4]])
+&gt;&gt;&gt; np.tile(b, 2)
+array([[1, 2, 1, 2],
+       [3, 4, 3, 4]])
+&gt;&gt;&gt; np.tile(b, (2, 1))
+array([[1, 2],
+       [3, 4],
+       [1, 2],
+       [3, 4]])
+
+&gt;&gt;&gt; c = np.array([1,2,3,4])
+&gt;&gt;&gt; np.tile(c,(4,1))
+array([[1, 2, 3, 4],
+       [1, 2, 3, 4],
+       [1, 2, 3, 4],
+       [1, 2, 3, 4]])
+</code></pre>
+</li>
+<li>
+<p><code>np.concatenate(arrays, axis=None, out=None, *, dtype=None, casting=None)</code>:</p>
+<pre><code class="language-python">concatenate((a1, a2, ...), axis=0, out=None, dtype=None, casting=&quot;same_kind&quot;)
+
+Join a sequence of arrays along an existing axis.
+
+Parameters
+----------
+a1, a2, ... : sequence of array_like
+    The arrays must have the same shape, except in the dimension
+    corresponding to `axis` (the first, by default).
+axis : int, optional
+    The axis along which the arrays will be joined.  If axis is None,
+    arrays are flattened before use.  Default is 0.
+out : ndarray, optional
+    If provided, the destination to place the result. The shape must be
+    correct, matching that of what concatenate would have returned if no
+    out argument were specified.
+dtype : str or dtype
+    If provided, the destination array will have this dtype. Cannot be
+    provided together with `out`.
+
+casting : {'no', 'equiv', 'safe', 'same_kind', 'unsafe'}, optional
+    Controls what kind of data casting may occur. Defaults to 'same_kind'.
+
+Returns
+-------
+res : ndarray
+    The concatenated array.
+
+See Also
+--------
+ma.concatenate : Concatenate function that preserves input masks.
+array_split : Split an array into multiple sub-arrays of equal or
+              near-equal size.
+split : Split array into a list of multiple sub-arrays of equal size.
+hsplit : Split array into multiple sub-arrays horizontally (column wise).
+vsplit : Split array into multiple sub-arrays vertically (row wise).
+dsplit : Split array into multiple sub-arrays along the 3rd axis (depth).
+stack : Stack a sequence of arrays along a new axis.
+block : Assemble arrays from blocks.
+hstack : Stack arrays in sequence horizontally (column wise).
+vstack : Stack arrays in sequence vertically (row wise).
+dstack : Stack arrays in sequence depth wise (along third dimension).
+column_stack : Stack 1-D arrays as columns into a 2-D array.
+
+Examples
+--------
+&gt;&gt;&gt; a = np.array([[1, 2], [3, 4]])
+&gt;&gt;&gt; b = np.array([[5, 6]])
+&gt;&gt;&gt; np.concatenate((a, b), axis=0)
+array([[1, 2],
+       [3, 4],
+       [5, 6]])
+&gt;&gt;&gt; np.concatenate((a, b.T), axis=1)
+array([[1, 2, 5],
+       [3, 4, 6]])
+&gt;&gt;&gt; np.concatenate((a, b), axis=None)
+array([1, 2, 3, 4, 5, 6])
+</code></pre>
+</li>
+<li>
+<p><code>np.loadtxt()</code>: Load data from a text file.</p>
+</li>
+<li>
+<p><code>np.insert(arr, obj, values, axis=None)</code>:</p>
+<pre><code class="language-python">Insert values along the given axis before the given indices.
+
+Parameters
+----------
+arr : array_like
+    Input array.
+obj : int, slice or sequence of ints
+    Object that defines the index or indices before which `values` is
+    inserted.
+
+    .. versionadded:: 1.8.0
+
+    Support for multiple insertions when `obj` is a single scalar or a
+    sequence with one element (similar to calling insert multiple
+    times).
+values : array_like
+    Values to insert into `arr`. If the type of `values` is different
+    from that of `arr`, `values` is converted to the type of `arr`.
+    `values` should be shaped so that ``arr[...,obj,...] = values``
+    is legal.
+axis : int, optional
+    Axis along which to insert `values`.  If `axis` is None then `arr`
+    is flattened first.
+
+Returns
+-------
+out : ndarray
+    A copy of `arr` with `values` inserted.  Note that `insert`
+    does not occur in-place: a new array is returned. If
+    `axis` is None, `out` is a flattened array.
+
+See Also
+--------
+append : Append elements at the end of an array.
+concatenate : Join a sequence of arrays along an existing axis.
+delete : Delete elements from an array.
+
+Notes
+-----
+Note that for higher dimensional inserts ``obj=0`` behaves very different
+from ``obj=[0]`` just like ``arr[:,0,:] = values`` is different from
+``arr[:,[0],:] = values``.
+
+Examples
+--------
+&gt;&gt;&gt; a = np.array([[1, 1], [2, 2], [3, 3]])
+&gt;&gt;&gt; a
+array([[1, 1],
+       [2, 2],
+       [3, 3]])
+&gt;&gt;&gt; np.insert(a, 1, 5)
+array([1, 5, 1, ..., 2, 3, 3])
+&gt;&gt;&gt; np.insert(a, 1, 5, axis=1)
+array([[1, 5, 1],
+       [2, 5, 2],
+       [3, 5, 3]])
+
+Difference between sequence and scalars:
+
+&gt;&gt;&gt; np.insert(a, [1], [[1],[2],[3]], axis=1)
+array([[1, 1, 1],
+       [2, 2, 2],
+       [3, 3, 3]])
+&gt;&gt;&gt; np.array_equal(np.insert(a, 1, [1, 2, 3], axis=1),
+...                np.insert(a, [1], [[1],[2],[3]], axis=1))
+True
+
+&gt;&gt;&gt; b = a.flatten()
+&gt;&gt;&gt; b
+array([1, 1, 2, 2, 3, 3])
+&gt;&gt;&gt; np.insert(b, [2, 2], [5, 6])
+array([1, 1, 5, ..., 2, 3, 3])
+
+&gt;&gt;&gt; np.insert(b, slice(2, 4), [5, 6])
+array([1, 1, 5, ..., 2, 3, 3])
+
+&gt;&gt;&gt; np.insert(b, [2, 2], [7.13, False]) # type casting
+array([1, 1, 7, ..., 2, 3, 3])
+
+&gt;&gt;&gt; x = np.arange(8).reshape(2, 4)
+&gt;&gt;&gt; idx = (1, 3)
+&gt;&gt;&gt; np.insert(x, idx, 999, axis=1)
+array([[  0, 999,   1,   2, 999,   3],
+       [  4, 999,   5,   6, 999,   7]])
+</code></pre>
+</li>
+<li>
+<p><code>np.unique(ar, return_index=False, return_inverse=False, return_counts=False, axis=None, *, equal_nan=True)</code>:</p>
+<pre><code class="language-python"> Find the unique elements of an array.
+
+ Returns the sorted unique elements of an array. There are three optional
+ outputs in addition to the unique elements:
+
+ * the indices of the input array that give the unique values
+ * the indices of the unique array that reconstruct the input array
+ * the number of times each unique value comes up in the input array
+
+ Parameters
+ ----------
+ ar : array_like
+     Input array. Unless `axis` is specified, this will be flattened if it
+     is not already 1-D.
+ return_index : bool, optional
+     If True, also return the indices of `ar` (along the specified axis,
+     if provided, or in the flattened array) that result in the unique array.
+ return_inverse : bool, optional
+     If True, also return the indices of the unique array (for the specified
+     axis, if provided) that can be used to reconstruct `ar`.
+ return_counts : bool, optional
+     If True, also return the number of times each unique item appears
+     in `ar`.
+ axis : int or None, optional
+     The axis to operate on. If None, `ar` will be flattened. If an integer,
+     the subarrays indexed by the given axis will be flattened and treated
+     as the elements of a 1-D array with the dimension of the given axis,
+     see the notes for more details.  Object arrays or structured arrays
+     that contain objects are not supported if the `axis` kwarg is used. The
+     default is None.
+ equal_nan : bool, optional
+     If True, collapses multiple NaN values in the return array into one.
+
+
+ Returns
+ -------
+ unique : ndarray
+     The sorted unique values.
+ unique_indices : ndarray, optional
+     The indices of the first occurrences of the unique values in the
+     original array. Only provided if `return_index` is True.
+ unique_inverse : ndarray, optional
+     The indices to reconstruct the original array from the
+     unique array. Only provided if `return_inverse` is True.
+ unique_counts : ndarray, optional
+     The number of times each of the unique values comes up in the
+     original array. Only provided if `return_counts` is True.
+
+     .. versionadded:: 1.9.0
+
+ See Also
+ --------
+ numpy.lib.arraysetops : Module with a number of other functions for
+                         performing set operations on arrays.
+ repeat : Repeat elements of an array.
+
+
+ Examples
+ --------
+ &gt;&gt;&gt; np.unique([1, 1, 2, 2, 3, 3])
+ array([1, 2, 3])
+ &gt;&gt;&gt; a = np.array([[1, 1], [2, 3]])
+ &gt;&gt;&gt; np.unique(a)
+ array([1, 2, 3])
+
+ Return the unique rows of a 2D array
+
+ &gt;&gt;&gt; a = np.array([[1, 0, 0], [1, 0, 0], [2, 3, 4]])
+ &gt;&gt;&gt; np.unique(a, axis=0)
+ array([[1, 0, 0], [2, 3, 4]])
+
+ Return the indices of the original array that give the unique values:
+
+ &gt;&gt;&gt; a = np.array(['a', 'b', 'b', 'c', 'a'])
+ &gt;&gt;&gt; u, indices = np.unique(a, return_index=True)
+ &gt;&gt;&gt; u
+ array(['a', 'b', 'c'], dtype='&lt;U1')
+ &gt;&gt;&gt; indices
+ array([0, 1, 3])
+ &gt;&gt;&gt; a[indices]
+ array(['a', 'b', 'c'], dtype='&lt;U1')
+
+ Reconstruct the input array from the unique values and inverse:
+
+ &gt;&gt;&gt; a = np.array([1, 2, 6, 4, 2, 3, 2])
+ &gt;&gt;&gt; u, indices = np.unique(a, return_inverse=True)
+ &gt;&gt;&gt; u
+ array([1, 2, 3, 4, 6])
+ &gt;&gt;&gt; indices
+ array([0, 1, 4, 3, 1, 2, 1])
+ &gt;&gt;&gt; u[indices]
+ array([1, 2, 6, 4, 2, 3, 2])
+
+ Reconstruct the input values from the unique values and counts:
+
+ &gt;&gt;&gt; a = np.array([1, 2, 6, 4, 2, 3, 2])
+ &gt;&gt;&gt; values, counts = np.unique(a, return_counts=True)
+ &gt;&gt;&gt; values
+ array([1, 2, 3, 4, 6])
+ &gt;&gt;&gt; counts
+ array([1, 3, 1, 1, 1])
+ &gt;&gt;&gt; np.repeat(values, counts)
+ array([1, 2, 2, 2, 3, 4, 6])    # original order not preserved
+</code></pre>
+</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="enumerate.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="torch.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="enumerate.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="torch.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
