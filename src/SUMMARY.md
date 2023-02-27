@@ -15,7 +15,7 @@
   - [sys](nested/sys.md)
   - [argparse](nested/argparse.md)
 - [Python | 特殊作用]()
-  - [__下划线](nested/__var__.md)
+  - [下划线](nested/underline.md)
   - [Magic Method](nested/Magic_Method.md)
 - [Python | 并行(parallel)]()
   - [Horovod](nested/Horovod.md)
