@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">简介</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> Python | 常用数据操作函数和方法</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="nested/open.html"><strong aria-hidden="true">1.1.</strong> with open() as f</a></li><li class="chapter-item expanded "><a href="nested/subprocess.html"><strong aria-hidden="true">1.2.</strong> subprocess</a></li><li class="chapter-item expanded "><a href="nested/enumerate.html"><strong aria-hidden="true">1.3.</strong> enumerate()</a></li><li class="chapter-item expanded "><a href="nested/random.html"><strong aria-hidden="true">1.4.</strong> random</a></li><li class="chapter-item expanded "><a href="nested/numpy.html"><strong aria-hidden="true">1.5.</strong> numpy</a></li><li class="chapter-item expanded "><a href="nested/torch.html"><strong aria-hidden="true">1.6.</strong> pytorch</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Python | 命令行解析接口</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="nested/os.html"><strong aria-hidden="true">2.1.</strong> os</a></li><li class="chapter-item expanded "><a href="nested/pathlib.html"><strong aria-hidden="true">2.2.</strong> pathlib</a></li><li class="chapter-item expanded "><a href="nested/sys.html"><strong aria-hidden="true">2.3.</strong> sys</a></li><li class="chapter-item expanded "><a href="nested/argparse.html"><strong aria-hidden="true">2.4.</strong> argparse</a></li></ol></li><li class="chapter-item expanded "><a href="nested/fortran.html"><strong aria-hidden="true">3.</strong> Fortran | 基本知识</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">简介</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> Python | 常用数据操作函数和方法</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="nested/open.html"><strong aria-hidden="true">1.1.</strong> with open() as f</a></li><li class="chapter-item expanded "><a href="nested/subprocess.html"><strong aria-hidden="true">1.2.</strong> subprocess</a></li><li class="chapter-item expanded "><a href="nested/enumerate.html"><strong aria-hidden="true">1.3.</strong> enumerate()</a></li><li class="chapter-item expanded "><a href="nested/random.html"><strong aria-hidden="true">1.4.</strong> random</a></li><li class="chapter-item expanded "><a href="nested/numpy.html"><strong aria-hidden="true">1.5.</strong> numpy</a></li><li class="chapter-item expanded "><a href="nested/torch.html"><strong aria-hidden="true">1.6.</strong> pytorch</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Python | 命令行解析接口</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="nested/os.html"><strong aria-hidden="true">2.1.</strong> os</a></li><li class="chapter-item expanded "><a href="nested/pathlib.html"><strong aria-hidden="true">2.2.</strong> pathlib</a></li><li class="chapter-item expanded "><a href="nested/sys.html"><strong aria-hidden="true">2.3.</strong> sys</a></li><li class="chapter-item expanded "><a href="nested/argparse.html"><strong aria-hidden="true">2.4.</strong> argparse</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Python | 特殊作用</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="nested/__var__.html"><strong aria-hidden="true">3.1.</strong> __下划线</a></li><li class="chapter-item expanded "><a href="nested/Magic_Method.html"><strong aria-hidden="true">3.2.</strong> Magic Method</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Python | 并行(parallel)</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="nested/Horovod.html"><strong aria-hidden="true">4.1.</strong> Horovod</a></li></ol></li><li class="chapter-item expanded "><a href="nested/others.html"><strong aria-hidden="true">5.</strong> Python | 其他</a></li><li class="chapter-item expanded "><a href="nested/fortran.html"><strong aria-hidden="true">6.</strong> Fortran | 基本知识</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -144,7 +144,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="test"><a class="header" href="#test">test</a></h1>
-<p>test</p>
+<p>studying...</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="with-open-as-f"><a class="header" href="#with-open-as-f">with open() as f:</a></h1>
 <pre><code class="language-python">with open('./filename.txt', 'r') as f:
    content = f.read(f)  #文件的读操作
@@ -167,7 +167,11 @@ a+:	 # 打开一个文件用于读写。如果该文件已存在，文件指针�
 ab+: # 以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。如果该文件不存在，创建新文件用于读写。
 </code></pre>
 <p>file 对象的属性：</p>
-<pre><code class="language-dotnetcli">file.read([size])        #将文件数据作为字符串返回，可选参数size控制读取的字节数
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
+<pre><code class="language-dotnetcli">=======
+```python
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 3a98cd2 (update)
+file.read([size])        #将文件数据作为字符串返回，可选参数size控制读取的字节数
 file.readlines([size])   #返回文件中行内容的列表，size参数可选
 file.write(str)          #将字符串写入文件
 file.writelines(strings) #将字符串序列写入文件
@@ -224,8 +228,53 @@ res = sp.check_output([&quot;grep&quot;, &quot;Iteration&quot;, tgt ,&quot;-c&qu
  array([-2., -3., -8.])
 </code></pre>
 </li>
+</ol>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
+<ol start="2">
 <li>
-<p><code>np.save(file, arr, allow_pickle=True, fix_imports=True)</code>:</p>
+<p><code>np.save(file, arr, allow_pickle=True, fix_imports=True)</code>:
+=======</p>
+</li>
+<li>
+<p><code>np.linalg.lstsq(a, b, rcond=&quot;warn&quot;)</code>:NumPy中的线性代数函数之一，用于求解线性最小二乘问题的解。线性最小二乘问题是指，给定一个矩阵X和一个向量y，求解最小化残差平方和的向量b，使得y ≈ Xb。</p>
+<ul>
+<li>a: 形状为(m,n)的2维数组，表示矩阵X。</li>
+<li>b: 形状为(m,)或(m, k)的1维或2维数组，表示向量y。</li>
+<li>rcond（可选）：浮点数或None，表示奇异值的截断阈值。奇异值是矩阵的特征值中非零的最小值，用于判断矩阵的秩。默认值为-1，表示使用numpy.finfo(a.dtype).eps * max(m, n)作为阈值。</li>
+</ul>
+<p>函数返回一个元组(x, residuals, rank, s)，其中：</p>
+<ul>
+<li>x：形状为(n,)或(n, k)的1维或2维数组，表示线性最小二乘问题的解b。</li>
+<li>residuals：形状为()或(1,)的0维或1维数组，表示残差平方和。如果b的长度大于1，则返回一个包含多个残差平方和的数组。</li>
+<li>rank：整数，表示矩阵X的秩。</li>
+<li>s：形状为(min(m,n),)的1维数组，表示奇异值。</li>
+</ul>
+<p>下面是一个示例，演示如何求解线性最小二乘问题：</p>
+<pre><code class="language-python">import numpy as np
+
+# 定义矩阵X和向量y
+X = np.array([[1, 1], [1, 2], [1, 3], [1, 4]])
+y = np.array([2, 3, 4, 5])
+
+# 求解线性最小二乘问题的解
+b, residuals, rank, s = np.linalg.lstsq(X, y, rcond=None)
+
+# 输出结果
+print(&quot;解b：&quot;, b)
+print(&quot;残差平方和：&quot;, residuals)
+print(&quot;矩阵X的秩：&quot;, rank)
+print(&quot;奇异值：&quot;, s)
+
+&gt;&gt;&gt;
+解b： [1. 1.]
+残差平方和： [4.18001683e-32]
+矩阵X的秩： 2
+奇异值： [5.77937881 0.77380911]
+</code></pre>
+</li>
+<li>
+<p><code>np.save(file, arr, allow_pickle=True, fix_imports=True)</code>:
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 3a98cd2 (update)</p>
 <pre><code class="language-python"> Save an array to a binary file in NumPy ``.npy`` format.
 
  Parameters
@@ -263,8 +312,13 @@ res = sp.check_output([&quot;grep&quot;, &quot;Iteration&quot;, tgt ,&quot;-c&qu
  Any data saved to the file is appended to the end of the file.
 </code></pre>
 </li>
+</ol>
+<h1>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+3. <code>np.tile(A, reps)</code>:</h1>
+<ol start="4">
 <li>
-<p><code>np.tile(A, reps)</code>:</p>
+<p><code>np.tile(A, reps)</code>:
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 3a98cd2 (update)</p>
 <pre><code class="language-python">Construct an array by repeating A the number of times given by reps.
 Parameters
 ----------
@@ -313,8 +367,13 @@ array([[1, 2, 3, 4],
        [1, 2, 3, 4]])
 </code></pre>
 </li>
+</ol>
+<h1>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+4. <code>np.concatenate(arrays, axis=None, out=None, *, dtype=None, casting=None)</code>:</h1>
+<ol start="5">
 <li>
-<p><code>np.concatenate(arrays, axis=None, out=None, *, dtype=None, casting=None)</code>:</p>
+<p><code>np.concatenate(arrays, axis=None, out=None, *, dtype=None, casting=None)</code>:
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 3a98cd2 (update)</p>
 <pre><code class="language-python">concatenate((a1, a2, ...), axis=0, out=None, dtype=None, casting=&quot;same_kind&quot;)
 
 Join a sequence of arrays along an existing axis.
@@ -374,11 +433,17 @@ array([[1, 2, 5],
 array([1, 2, 3, 4, 5, 6])
 </code></pre>
 </li>
+</ol>
+<h1>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+5. <code>np.loadtxt()</code>: Load data from a text file.
+6. <code>np.insert(arr, obj, values, axis=None)</code>:</h1>
+<ol start="6">
 <li>
 <p><code>np.loadtxt()</code>: Load data from a text file.</p>
 </li>
 <li>
-<p><code>np.insert(arr, obj, values, axis=None)</code>:</p>
+<p><code>np.insert(arr, obj, values, axis=None)</code>:
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 3a98cd2 (update)</p>
 <pre><code class="language-python">Insert values along the given axis before the given indices.
 
 Parameters
@@ -465,8 +530,13 @@ array([[  0, 999,   1,   2, 999,   3],
        [  4, 999,   5,   6, 999,   7]])
 </code></pre>
 </li>
+</ol>
+<h1>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+7. <code>np.unique(ar, return_index=False, return_inverse=False,    return_counts=False, axis=None, *, equal_nan=True)</code>:</h1>
+<ol start="8">
 <li>
-<p><code>np.unique(ar, return_index=False, return_inverse=False,    return_counts=False, axis=None, *, equal_nan=True)</code>:</p>
+<p><code>np.unique(ar, return_index=False, return_inverse=False,    return_counts=False, axis=None, *, equal_nan=True)</code>:
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 3a98cd2 (update)</p>
 <pre><code class="language-python"> Find the unique elements of an array.
 
  Returns the sorted unique elements of an array. There are three optional
@@ -572,17 +642,24 @@ array([[  0, 999,   1,   2, 999,   3],
  array([1, 2, 2, 2, 3, 4, 6])    # original order not preserved
 </code></pre>
 </li>
-<li>
-<p><code>np.math.ceil()</code>:在Python中，math模块包含许多数学运算，可以使用该模块轻松地执行这些运算。函数Math.ceil(x)返回大于数字x的最小整数值。如果number已经是整数，则返回相同的数字。</p>
-</li>
+</ol>
+<h1>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+8. <code>np.math.ceil()</code>:在Python中，math模块包含许多数学运算，可以使用该模块轻松地执行这些运算。函数Math.ceil(x)返回大于数字x的最小整数值。如果number已经是整数，则返回相同的数字。</h1>
+<ol start="9">
+<li><code>np.math.ceil()</code>:在Python中，math模块包含许多数学运算，可以使用该模块轻松地执行这些运算。函数Math.ceil(x)返回大于数字x的最小整数值。如果number已经是整数，则返回相同的数字。</li>
+<li><code>.tolist()</code>: NumPy中的一个函数，用于将NumPy数组转换为Python列表。
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 3a98cd2 (update)</li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="import-torch"><a class="header" href="#import-torch">import torch</a></h1>
 <ol>
+<li><code>torch.zeros_like(Tensor, dtype)</code>: 返回一个为 0 的 Tensor.</li>
+</ol>
+<h1>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+2. <code>torch.set_printoptions()</code>: 显示的元素精度</h1>
+<ol start="2">
 <li>
-<p><code>torch.zeros_like(Tensor, dtype)</code>: 返回一个为 0 的 Tensor.</p>
-</li>
-<li>
-<p><code>torch.set_printoptions()</code>: 显示的元素精度</p>
+<p><code>torch.set_printoptions()</code>: 显示的元素精度。
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 3a98cd2 (update)</p>
 <details>
  <summary>详细解释</summary>
 <pre><code class="language-python">def set_printoptions(
@@ -657,8 +734,52 @@ array([[  0, 999,   1,   2, 999,   3],
         PRINT_OPTS.linewidth = linewidth
     PRINT_OPTS.sci_mode = sci_mode
 </code></pre>
-</details></li>
+</li>
 </ol>
+<h1>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+</details></h1>
+<pre><code>&lt;/details&gt;
+</code></pre>
+<ol start="3">
+<li>
+<p><code>import torch.backends.cudnn as cudnn</code>: 为什么使用相同的网络结构，跑出来的效果完全不同，用的学习率，迭代次数，batch size 都是一样？固定随机数种子是非常重要的。但是如果你使用的是PyTorch等框架，还要看一下框架的种子是否固定了。还有，如果你用了cuda，别忘了cuda的随机数种子。这里还需要用到torch.backends.cudnn.deterministic.</p>
+<p><code>torch.backends.cudnn.deterministic</code>是啥？顾名思义，将这个 flag 置为<code>True</code>的话，每次返回的卷积算法将是确定的，即默认算法。如果配合上设置 Torch 的随机种子为固定值的话，应该可以保证每次运行网络的时候相同输入的输出是固定的，代码大致这样:</p>
+<pre><code class="language-python">def init_seeds(seed=0):
+torch.manual_seed(seed) # sets the seed for generating random numbers.
+torch.cuda.manual_seed(seed) # Sets the seed for generating random numbers for the current GPU. It’s safe to call this function if CUDA is not available; in that case, it is silently ignored.
+torch.cuda.manual_seed_all(seed) # Sets the seed for generating random numbers on all GPUs. It’s safe to call this function if CUDA is not available; in that case, it is silently ignored.
+
+if seed == 0:
+    cudnn.deterministic = True
+    cudnn.benchmark = False
+</code></pre>
+<blockquote>
+<p><code>torch.backends.cudnn.benchmark = true</code>: 大部分情况下，设置这个 flag 可以让内置的 cuDNN 的 auto-tuner 自动寻找最适合当前配置的高效算法，来达到优化运行效率的问题。<br>
+一般来讲，应该遵循以下准则：</p>
+<ul>
+<li>如果网络的输入数据维度或类型上变化不大，设置  <code>torch.backends.cudnn.benchmark = true</code>  可以增加运行效率；</li>
+<li>如果网络的输入数据在每次 iteration 都变化的话，会导致 cnDNN 每次都会去寻找一遍最优配置，这样反而会降低运行效率。</li>
+<li>为了避免计算结果的波动，设置<code>torch.backends.cudnn.deterministic = True</code>.</li>
+</ul>
+</blockquote>
+</li>
+<li></li>
+</ol>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>3a98cd2 (update)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="import-os"><a class="header" href="#import-os">import os</a></h1>
 <ol>
 <li><code>os.walk()</code>: yields a 3-tuple:(root, dirs, files) // dirpath, dirnames, filenames</li>
@@ -731,7 +852,8 @@ cd baz
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="import-sys"><a class="header" href="#import-sys">import sys</a></h1>
-<p><code>sys.path</code>指定模块搜索路径的列表。默认情况下，python 导入文件或者模块，会在<code>sys.path</code>里找模块的路径。如果在当前搜索路径列表<code>sys.path</code>中找不到该模块的话，就会报错。</p>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+<code>sys.path</code>指定模块搜索路径的列表。默认情况下，python 导入文件或者模块，会在<code>sys.path</code>里找模块的路径。如果在当前搜索路径列表<code>sys.path</code>中找不到该模块的话，就会报错。</p>
 <hr />
 <p>最常用的用法就是向<code>sys.path</code>中添加搜索路径</p>
 <pre><code class="language-python">import sys
@@ -801,7 +923,208 @@ Out[7]:
  '/data/home/hfhuang/software/anaconda3/envs/p100/lib/python3.8/site-packages/op-0.0.0-py3.8-linux-x86_64.egg',
  '/data/home/hfhuang/software/PWmatMLFF/src/pre_data/']
 </code></pre>
+<p>=======</p>
+<ol>
+<li>
+<p><code>sys.path</code>: 指定模块搜索路径的列表。默认情况下，python 导入文件或者模块，会在<code>sys.path</code>里找模块的路径。如果在当前搜索路径列表<code>sys.path</code>中找不到该模块的话，就会报错。</p>
+<p>最常用的用法就是向<code>sys.path</code>中添加搜索路径</p>
+<pre><code class="language-python">import sys
+sys.path.append(path)  # path 代表的是一个路径
+</code></pre>
+<details>
+<summary>使用示例:</summary>
+<ul>
+<li>查看当前搜索路径</li>
+</ul>
+<pre><code class="language-python">In [2]: import sys
+
+In [3]: sys.path
+Out[3]:
+['/data/home/hfhuang/software/anaconda3/envs/p100/bin',
+'',
+'/opt/rh/devtoolset-8/root/usr/lib64/python2.7/site-packages',
+'/opt/rh/devtoolset-8/root/usr/lib/python2.7/site-packages',
+'/data/home/hfhuang/software/PWmatMLFF/src',
+'/data/home/hfhuang/software',
+'/data/home/hfhuang/software/anaconda3/envs/p100/lib/python38.zip',
+'/data/home/hfhuang/software/anaconda3/envs/p100/lib/python3.8',
+'/data/home/hfhuang/software/anaconda3/envs/p100/lib/python3.8/lib-dynload',
+'/data/home/hfhuang/.local/lib/python3.8/site-packages',
+'/data/home/hfhuang/software/anaconda3/envs/p100/lib/python3.8/site-packages',
+'/data/home/hfhuang/software/anaconda3/envs/p100/lib/python3.8/site-packages/op-0.0.0-py3.8-linux-x86_64.egg']
+
+</code></pre>
+<ul>
+<li>
+<p>意思是导入python模块时,需要从这些路径中寻找</p>
+</li>
+<li>
+<p>添加新的搜索路径</p>
+<ul>
+<li>假设我要导入一个模块<code>md100</code>,路径为<code>/data/home/hfhuang/software/PWmatMLFF/src/pre_data/</code>,直接<code>import md100</code>,显示报错:</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-python">In [4]: import md100
+---------------------------------------------------------------------------
+ModuleNotFoundError                       Traceback (most recent call last)
+Cell In[4], line 1
+----&gt; 1 import md100
+
+ModuleNotFoundError: No module named 'md100'
+</code></pre>
+<ul>
+<li>添加路径后重新 import:</li>
+</ul>
+<pre><code class="language-python">In [5]: sys.path.append('/data/home/hfhuang/software/PWmatMLFF/src/pre_data/')
+
+In [6]: import md100
+
+In [7]: sys.path
+Out[7]:
+['/data/home/hfhuang/software/anaconda3/envs/p100/bin',
+  '',
+  '/opt/rh/devtoolset-8/root/usr/lib64/python2.7/site-packages',
+  '/opt/rh/devtoolset-8/root/usr/lib/python2.7/site-packages',
+  '/data/home/hfhuang/software/PWmatMLFF/src',
+  '/data/home/hfhuang/software',
+  '/data/home/hfhuang/software/anaconda3/envs/p100/lib/python38.zip',
+  '/data/home/hfhuang/software/anaconda3/envs/p100/lib/python3.8',
+  '/data/home/hfhuang/software/anaconda3/envs/p100/lib/python3.8/lib-dynload',
+  '/data/home/hfhuang/.local/lib/python3.8/site-packages',
+  '/data/home/hfhuang/software/anaconda3/envs/p100/lib/python3.8/site-packages',
+  '/data/home/hfhuang/software/anaconda3/envs/p100/lib/python3.8/site-packages/op-0.0.0-py3.8-linux-x86_64.egg',
+  '/data/home/hfhuang/software/PWmatMLFF/src/pre_data/']
+</code></pre>
+</details>
+</li>
+<li>
+<p><code>sys.argv</code>: 一个从程序外部获取参数的桥梁。因为我们从外部取得的参数可以是多个，所以获得的是一个列表（list)，也就是说 sys.argv 其实可以看作是一个列表，所以才能用[]提取其中的元素。其第一个元素是程序本身，随后才依次是外部给予的参数。</p>
+<details>
+<summary>使用示例:</summary>
+<ul>
+<li>假设存在文件<em>test.py</em>, 执行代码时：</li>
+</ul>
+<pre><code class="language-python">import sys
+a=sys.argv
+b=len(sys.argv)
+print(a)
+print(b)
+
+&gt;&gt;&gt; ['test.py',]
+    1
+</code></pre>
+<ul>
+<li>再次运行代码python test.py coding:</li>
+</ul>
+<pre><code class="language-python">&gt;&gt;&gt; ['test.py', 'coding']
+    2
+</code></pre>
+</details>
+</li>
+<li></li>
+</ol>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>3a98cd2 (update)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="import-argparse"><a class="header" href="#import-argparse">import argparse</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="下划线命名约定"><a class="header" href="#下划线命名约定">下划线命名约定</a></h1>
+<p>在Python中，变量名中的下划线是一种命名约定，用于指示变量的含义或作用。在具体的命名约定中，下划线有以下几种用法：</p>
+<ol>
+<li>
+<p><code>_var</code>: 以单下划线开头的变量名被认为是“内部使用”或“私有的”，即表示该变量不应该在模块外部直接访问。但这只是一种惯例，并没有强制性规定，因为Python并没有提供真正的私有变量机制。</p>
+</li>
+<li>
+<p><code>__var</code>: 以双下划线开头但不以双下划线结尾的变量名是“名称修饰”，即会在变量名前加上一个下划线和类名，例如 _classname__var。这种命名约定主要用于避免类的属性名与其子类的属性名冲突。</p>
+</li>
+<li>
+<p><code>__var__</code>: 以双下划线开头和结尾的变量名是Python中的“魔术方法”（Magic Method）或“特殊方法”（Special Method），用于实现类的特殊行为。例如，__init__方法用于初始化一个对象，在创建对象时自动调用。</p>
+</li>
+<li>
+<p><code>var_</code>: 以单下划线结尾的变量名通常用于避免与Python关键字产生冲突。</p>
+</li>
+</ol>
+<p>下面是几个例子来解释这些约定：</p>
+<pre><code class="language-python">class MyClass:
+    def __init__(self):
+        self._var = 1       # 私有变量
+        self.__var = 2      # 名称修饰
+        self.__var__ = 3    # 魔术方法
+        self.var_ = 4       # 避免关键字冲突
+
+obj = MyClass()
+print(obj._var)           # 正常访问私有变量      &gt;&gt;&gt; 1
+print(obj._MyClass__var)  # 访问名称修饰变量      &gt;&gt;&gt; 2
+print(obj.__var__)        # 魔术方法，输出3       &gt;&gt;&gt; 3
+print(obj.var_)           # 避免关键字冲突        &gt;&gt;&gt; 4
+
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="魔术方法magic-method"><a class="header" href="#魔术方法magic-method">魔术方法（Magic Method)</a></h1>
+<ol>
+<li>
+<p><code>__getitem__</code>: Python中的一个魔术方法，用于实现对象的索引访问。当我们使用<code>[]</code>符号对一个对象进行索引操作时，实际上是在调用这个对象的<code>__getitem__</code>方法。</p>
+<p><code>__getitem__</code>方法接收一个参数<code>key</code>，表示索引值，然后根据索引值返回相应的值。如果<code>key</code>是整数，则表示索引访问；如果<code>key</code>是切片对象，则表示切片访问。如果<code>key</code>不是合法的索引值，则抛出<code>IndexError</code>异常。</p>
+<p>下面是一个示例，演示如何定义<code>__getitem__</code>方法来实现对象的索引访问：</p>
+<pre><code class="language-python">class MyList:
+def __init__(self, data):
+    self.data = data
+
+def __getitem__(self, key):
+    if isinstance(key, int):
+        if key &lt; 0 or key &gt;= len(self.data):
+            raise IndexError('list index out of range')
+        return self.data[key]
+    elif isinstance(key, slice):
+        start, stop, step = key.start, key.stop, key.step
+        start = start or 0
+        stop = stop or len(self.data)
+        step = step or 1
+        return [self.data[i] for i in range(start, stop, step)]
+    else:
+        raise TypeError('indices must be integers or slices')
+</code></pre>
+<p>在上面的代码中，我们定义了一个<code>MyList</code>类，它包含一个列表数据<code>data</code>。然后，我们在类中定义了<code>__getitem_</code>_方法，它接收一个参数<code>key</code>，表示索引值。如果<code>key</code>是整数，我们检查索引值是否合法，然后返回相应的元素。如果<code>key</code>是切片对象，我们解析切片对象，然后返回切片所表示的元素列表。如果<code>key</code>既不是整数也不是切片对象，则抛出<code>TypeError</code>异常。</p>
+<p>使用上述代码，我们可以像使用普通列表一样使用<code>MyList</code>对象进行索引访问和切片访问：</p>
+<pre><code class="language-python">mylist = MyList([1, 2, 3, 4, 5])
+print(mylist[0])       # 输出1
+print(mylist[-1])      # 输出5
+print(mylist[1:3])     # 输出[2, 3]
+print(mylist[::2])     # 输出[1, 3, 5]
+</code></pre>
+</li>
+<li>
+<p><code>__len__</code>: Python中的一个魔术方法，用于实现对象的长度计算。当我们使用<code>len()</code>函数对一个对象进行长度计算时，实际上是在调用这个对象的<code>__len__</code>方法。</p>
+<p><code>__len__</code>方法不接收任何参数，它应该返回一个整数，表示对象的长度。如果对象没有长度，则应该抛出<code>TypeError</code>异常。</p>
+<p>下面是一个示例，演示如何定义<code>__len__</code>方法来实现对象的长度计算：</p>
+<pre><code class="language-python">class MyList:
+    def __init__(self, data):
+        self.data = data
+
+    def __len__(self):
+        return len(self.data)
+</code></pre>
+<p>在上面的代码中，我们定义了一个<code>MyList</code>类，它包含一个列表数据<code>data</code>。然后，我们在类中定义了<code>__len__</code>方法，它返回列表数据的长度。</p>
+<p>使用上述代码，我们可以像使用普通列表一样使用<code>MyList</code>对象进行长度计算：</p>
+<pre><code class="language-python">mylist = MyList([1, 2, 3, 4, 5])
+print(len(mylist))     # 输出5
+</code></pre>
+<p>注意，Python中许多内置类型都实现了<code>__len__</code>方法，如列表、元组、字符串等。因此，当我们使用<code>len()</code>函数计算这些对象的长度时，也是调用它们的<code>__len__</code>方法。</p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="import-horovodtorch-as-hvd"><a class="header" href="#import-horovodtorch-as-hvd">import horovod.torch as hvd</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="python--其他"><a class="header" href="#python--其他">Python | 其他</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="fortran-base"><a class="header" href="#fortran-base">Fortran base</a></h1>
 <h1 id="变量"><a class="header" href="#变量">变量</a></h1>
 <p>5 种内置数据类型</p>

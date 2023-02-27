@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">简介</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> Python | 常用数据操作函数和方法</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../nested/open.html"><strong aria-hidden="true">1.1.</strong> with open() as f</a></li><li class="chapter-item expanded "><a href="../nested/subprocess.html"><strong aria-hidden="true">1.2.</strong> subprocess</a></li><li class="chapter-item expanded "><a href="../nested/enumerate.html"><strong aria-hidden="true">1.3.</strong> enumerate()</a></li><li class="chapter-item expanded "><a href="../nested/random.html"><strong aria-hidden="true">1.4.</strong> random</a></li><li class="chapter-item expanded "><a href="../nested/numpy.html" class="active"><strong aria-hidden="true">1.5.</strong> numpy</a></li><li class="chapter-item expanded "><a href="../nested/torch.html"><strong aria-hidden="true">1.6.</strong> pytorch</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Python | 命令行解析接口</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../nested/os.html"><strong aria-hidden="true">2.1.</strong> os</a></li><li class="chapter-item expanded "><a href="../nested/pathlib.html"><strong aria-hidden="true">2.2.</strong> pathlib</a></li><li class="chapter-item expanded "><a href="../nested/sys.html"><strong aria-hidden="true">2.3.</strong> sys</a></li><li class="chapter-item expanded "><a href="../nested/argparse.html"><strong aria-hidden="true">2.4.</strong> argparse</a></li></ol></li><li class="chapter-item expanded "><a href="../nested/fortran.html"><strong aria-hidden="true">3.</strong> Fortran | 基本知识</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">简介</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> Python | 常用数据操作函数和方法</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../nested/open.html"><strong aria-hidden="true">1.1.</strong> with open() as f</a></li><li class="chapter-item expanded "><a href="../nested/subprocess.html"><strong aria-hidden="true">1.2.</strong> subprocess</a></li><li class="chapter-item expanded "><a href="../nested/enumerate.html"><strong aria-hidden="true">1.3.</strong> enumerate()</a></li><li class="chapter-item expanded "><a href="../nested/random.html"><strong aria-hidden="true">1.4.</strong> random</a></li><li class="chapter-item expanded "><a href="../nested/numpy.html" class="active"><strong aria-hidden="true">1.5.</strong> numpy</a></li><li class="chapter-item expanded "><a href="../nested/torch.html"><strong aria-hidden="true">1.6.</strong> pytorch</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Python | 命令行解析接口</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../nested/os.html"><strong aria-hidden="true">2.1.</strong> os</a></li><li class="chapter-item expanded "><a href="../nested/pathlib.html"><strong aria-hidden="true">2.2.</strong> pathlib</a></li><li class="chapter-item expanded "><a href="../nested/sys.html"><strong aria-hidden="true">2.3.</strong> sys</a></li><li class="chapter-item expanded "><a href="../nested/argparse.html"><strong aria-hidden="true">2.4.</strong> argparse</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Python | 特殊作用</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../nested/__var__.html"><strong aria-hidden="true">3.1.</strong> __下划线</a></li><li class="chapter-item expanded "><a href="../nested/Magic_Method.html"><strong aria-hidden="true">3.2.</strong> Magic Method</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Python | 并行(parallel)</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../nested/Horovod.html"><strong aria-hidden="true">4.1.</strong> Horovod</a></li></ol></li><li class="chapter-item expanded "><a href="../nested/others.html"><strong aria-hidden="true">5.</strong> Python | 其他</a></li><li class="chapter-item expanded "><a href="../nested/fortran.html"><strong aria-hidden="true">6.</strong> Fortran | 基本知识</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -163,8 +163,53 @@
  array([-2., -3., -8.])
 </code></pre>
 </li>
+</ol>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
+<ol start="2">
 <li>
-<p><code>np.save(file, arr, allow_pickle=True, fix_imports=True)</code>:</p>
+<p><code>np.save(file, arr, allow_pickle=True, fix_imports=True)</code>:
+=======</p>
+</li>
+<li>
+<p><code>np.linalg.lstsq(a, b, rcond=&quot;warn&quot;)</code>:NumPy中的线性代数函数之一，用于求解线性最小二乘问题的解。线性最小二乘问题是指，给定一个矩阵X和一个向量y，求解最小化残差平方和的向量b，使得y ≈ Xb。</p>
+<ul>
+<li>a: 形状为(m,n)的2维数组，表示矩阵X。</li>
+<li>b: 形状为(m,)或(m, k)的1维或2维数组，表示向量y。</li>
+<li>rcond（可选）：浮点数或None，表示奇异值的截断阈值。奇异值是矩阵的特征值中非零的最小值，用于判断矩阵的秩。默认值为-1，表示使用numpy.finfo(a.dtype).eps * max(m, n)作为阈值。</li>
+</ul>
+<p>函数返回一个元组(x, residuals, rank, s)，其中：</p>
+<ul>
+<li>x：形状为(n,)或(n, k)的1维或2维数组，表示线性最小二乘问题的解b。</li>
+<li>residuals：形状为()或(1,)的0维或1维数组，表示残差平方和。如果b的长度大于1，则返回一个包含多个残差平方和的数组。</li>
+<li>rank：整数，表示矩阵X的秩。</li>
+<li>s：形状为(min(m,n),)的1维数组，表示奇异值。</li>
+</ul>
+<p>下面是一个示例，演示如何求解线性最小二乘问题：</p>
+<pre><code class="language-python">import numpy as np
+
+# 定义矩阵X和向量y
+X = np.array([[1, 1], [1, 2], [1, 3], [1, 4]])
+y = np.array([2, 3, 4, 5])
+
+# 求解线性最小二乘问题的解
+b, residuals, rank, s = np.linalg.lstsq(X, y, rcond=None)
+
+# 输出结果
+print(&quot;解b：&quot;, b)
+print(&quot;残差平方和：&quot;, residuals)
+print(&quot;矩阵X的秩：&quot;, rank)
+print(&quot;奇异值：&quot;, s)
+
+&gt;&gt;&gt;
+解b： [1. 1.]
+残差平方和： [4.18001683e-32]
+矩阵X的秩： 2
+奇异值： [5.77937881 0.77380911]
+</code></pre>
+</li>
+<li>
+<p><code>np.save(file, arr, allow_pickle=True, fix_imports=True)</code>:
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 3a98cd2 (update)</p>
 <pre><code class="language-python"> Save an array to a binary file in NumPy ``.npy`` format.
 
  Parameters
@@ -202,8 +247,13 @@
  Any data saved to the file is appended to the end of the file.
 </code></pre>
 </li>
+</ol>
+<h1>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+3. <code>np.tile(A, reps)</code>:</h1>
+<ol start="4">
 <li>
-<p><code>np.tile(A, reps)</code>:</p>
+<p><code>np.tile(A, reps)</code>:
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 3a98cd2 (update)</p>
 <pre><code class="language-python">Construct an array by repeating A the number of times given by reps.
 Parameters
 ----------
@@ -252,8 +302,13 @@ array([[1, 2, 3, 4],
        [1, 2, 3, 4]])
 </code></pre>
 </li>
+</ol>
+<h1>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+4. <code>np.concatenate(arrays, axis=None, out=None, *, dtype=None, casting=None)</code>:</h1>
+<ol start="5">
 <li>
-<p><code>np.concatenate(arrays, axis=None, out=None, *, dtype=None, casting=None)</code>:</p>
+<p><code>np.concatenate(arrays, axis=None, out=None, *, dtype=None, casting=None)</code>:
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 3a98cd2 (update)</p>
 <pre><code class="language-python">concatenate((a1, a2, ...), axis=0, out=None, dtype=None, casting=&quot;same_kind&quot;)
 
 Join a sequence of arrays along an existing axis.
@@ -313,11 +368,17 @@ array([[1, 2, 5],
 array([1, 2, 3, 4, 5, 6])
 </code></pre>
 </li>
+</ol>
+<h1>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+5. <code>np.loadtxt()</code>: Load data from a text file.
+6. <code>np.insert(arr, obj, values, axis=None)</code>:</h1>
+<ol start="6">
 <li>
 <p><code>np.loadtxt()</code>: Load data from a text file.</p>
 </li>
 <li>
-<p><code>np.insert(arr, obj, values, axis=None)</code>:</p>
+<p><code>np.insert(arr, obj, values, axis=None)</code>:
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 3a98cd2 (update)</p>
 <pre><code class="language-python">Insert values along the given axis before the given indices.
 
 Parameters
@@ -404,8 +465,13 @@ array([[  0, 999,   1,   2, 999,   3],
        [  4, 999,   5,   6, 999,   7]])
 </code></pre>
 </li>
+</ol>
+<h1>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+7. <code>np.unique(ar, return_index=False, return_inverse=False,    return_counts=False, axis=None, *, equal_nan=True)</code>:</h1>
+<ol start="8">
 <li>
-<p><code>np.unique(ar, return_index=False, return_inverse=False,    return_counts=False, axis=None, *, equal_nan=True)</code>:</p>
+<p><code>np.unique(ar, return_index=False, return_inverse=False,    return_counts=False, axis=None, *, equal_nan=True)</code>:
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 3a98cd2 (update)</p>
 <pre><code class="language-python"> Find the unique elements of an array.
 
  Returns the sorted unique elements of an array. There are three optional
@@ -511,9 +577,13 @@ array([[  0, 999,   1,   2, 999,   3],
  array([1, 2, 2, 2, 3, 4, 6])    # original order not preserved
 </code></pre>
 </li>
-<li>
-<p><code>np.math.ceil()</code>:在Python中，math模块包含许多数学运算，可以使用该模块轻松地执行这些运算。函数Math.ceil(x)返回大于数字x的最小整数值。如果number已经是整数，则返回相同的数字。</p>
-</li>
+</ol>
+<h1>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+8. <code>np.math.ceil()</code>:在Python中，math模块包含许多数学运算，可以使用该模块轻松地执行这些运算。函数Math.ceil(x)返回大于数字x的最小整数值。如果number已经是整数，则返回相同的数字。</h1>
+<ol start="9">
+<li><code>np.math.ceil()</code>:在Python中，math模块包含许多数学运算，可以使用该模块轻松地执行这些运算。函数Math.ceil(x)返回大于数字x的最小整数值。如果number已经是整数，则返回相同的数字。</li>
+<li><code>.tolist()</code>: NumPy中的一个函数，用于将NumPy数组转换为Python列表。
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 3a98cd2 (update)</li>
 </ol>
 
                     </main>
