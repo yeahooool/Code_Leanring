@@ -19,8 +19,48 @@
     >>> np.linalg.det(a)
     array([-2., -3., -8.])
    ```
+<<<<<<< HEAD
 
 2. `np.save(file, arr, allow_pickle=True, fix_imports=True)`:
+=======
+2. `np.linalg.lstsq(a, b, rcond="warn")`:NumPy中的线性代数函数之一，用于求解线性最小二乘问题的解。线性最小二乘问题是指，给定一个矩阵X和一个向量y，求解最小化残差平方和的向量b，使得y ≈ Xb。
+
+    * a: 形状为(m,n)的2维数组，表示矩阵X。
+    * b: 形状为(m,)或(m, k)的1维或2维数组，表示向量y。
+    * rcond（可选）：浮点数或None，表示奇异值的截断阈值。奇异值是矩阵的特征值中非零的最小值，用于判断矩阵的秩。默认值为-1，表示使用numpy.finfo(a.dtype).eps * max(m, n)作为阈值。
+
+    函数返回一个元组(x, residuals, rank, s)，其中：
+    * x：形状为(n,)或(n, k)的1维或2维数组，表示线性最小二乘问题的解b。
+    * residuals：形状为()或(1,)的0维或1维数组，表示残差平方和。如果b的长度大于1，则返回一个包含多个残差平方和的数组。
+    * rank：整数，表示矩阵X的秩。
+    * s：形状为(min(m,n),)的1维数组，表示奇异值。
+    
+    下面是一个示例，演示如何求解线性最小二乘问题：
+    ```python
+    import numpy as np
+
+    # 定义矩阵X和向量y
+    X = np.array([[1, 1], [1, 2], [1, 3], [1, 4]])
+    y = np.array([2, 3, 4, 5])
+    
+    # 求解线性最小二乘问题的解
+    b, residuals, rank, s = np.linalg.lstsq(X, y, rcond=None)
+    
+    # 输出结果
+    print("解b：", b)
+    print("残差平方和：", residuals)
+    print("矩阵X的秩：", rank)
+    print("奇异值：", s)
+
+    >>>
+    解b： [1. 1.]
+    残差平方和： [4.18001683e-32]
+    矩阵X的秩： 2
+    奇异值： [5.77937881 0.77380911]
+    ```
+
+3. `np.save(file, arr, allow_pickle=True, fix_imports=True)`:
+>>>>>>> 3a98cd2 (update)
 
    ```python
     Save an array to a binary file in NumPy ``.npy`` format.
@@ -60,7 +100,11 @@
     Any data saved to the file is appended to the end of the file.
    ```
 
+<<<<<<< HEAD
 3. `np.tile(A, reps)`:
+=======
+4. `np.tile(A, reps)`:
+>>>>>>> 3a98cd2 (update)
 
    ```python
    Construct an array by repeating A the number of times given by reps.
@@ -111,7 +155,11 @@
           [1, 2, 3, 4]])
    ```
 
+<<<<<<< HEAD
 4. `np.concatenate(arrays, axis=None, out=None, *, dtype=None, casting=None)`:
+=======
+5. `np.concatenate(arrays, axis=None, out=None, *, dtype=None, casting=None)`:
+>>>>>>> 3a98cd2 (update)
 
    ```python
    concatenate((a1, a2, ...), axis=0, out=None, dtype=None, casting="same_kind")
@@ -173,8 +221,13 @@
    array([1, 2, 3, 4, 5, 6])
    ```
 
+<<<<<<< HEAD
 5. `np.loadtxt()`: Load data from a text file.
 6. `np.insert(arr, obj, values, axis=None)`:
+=======
+6. `np.loadtxt()`: Load data from a text file.
+7. `np.insert(arr, obj, values, axis=None)`:
+>>>>>>> 3a98cd2 (update)
 
    ```python
    Insert values along the given axis before the given indices.
@@ -263,7 +316,11 @@
           [  4, 999,   5,   6, 999,   7]])
    ```
 
+<<<<<<< HEAD
 7. `np.unique(ar, return_index=False, return_inverse=False,    return_counts=False, axis=None, *, equal_nan=True)`:
+=======
+8. `np.unique(ar, return_index=False, return_inverse=False,    return_counts=False, axis=None, *, equal_nan=True)`:
+>>>>>>> 3a98cd2 (update)
 
    ```python
     Find the unique elements of an array.
@@ -371,4 +428,9 @@
     array([1, 2, 2, 2, 3, 4, 6])    # original order not preserved
    ```
 
+<<<<<<< HEAD
 8. `np.math.ceil()`:在Python中，math模块包含许多数学运算，可以使用该模块轻松地执行这些运算。函数Math.ceil(x)返回大于数字x的最小整数值。如果number已经是整数，则返回相同的数字。
+=======
+9. `np.math.ceil()`:在Python中，math模块包含许多数学运算，可以使用该模块轻松地执行这些运算。函数Math.ceil(x)返回大于数字x的最小整数值。如果number已经是整数，则返回相同的数字。
+10. `.tolist()`: NumPy中的一个函数，用于将NumPy数组转换为Python列表。
+>>>>>>> 3a98cd2 (update)

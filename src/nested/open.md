@@ -27,7 +27,11 @@ ab+: # 以二进制格式打开一个文件用于追加。如果该文件已存�
 
 file 对象的属性：
 
+<<<<<<< HEAD
 ```dotnetcli
+=======
+```python
+>>>>>>> 3a98cd2 (update)
 file.read([size])        #将文件数据作为字符串返回，可选参数size控制读取的字节数
 file.readlines([size])   #返回文件中行内容的列表，size参数可选
 file.write(str)          #将字符串写入文件

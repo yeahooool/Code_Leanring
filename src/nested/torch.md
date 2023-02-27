@@ -2,7 +2,11 @@
 
 1. `torch.zeros_like(Tensor, dtype)`: 返回一个为 0 的 Tensor.
 
+<<<<<<< HEAD
 2. `torch.set_printoptions()`: 显示的元素精度
+=======
+2. `torch.set_printoptions()`: 显示的元素精度。
+>>>>>>> 3a98cd2 (update)
     <details>
     <summary>详细解释</summary>
     
@@ -79,4 +83,29 @@
             PRINT_OPTS.linewidth = linewidth
         PRINT_OPTS.sci_mode = sci_mode
     ```
+<<<<<<< HEAD
     </details>
+=======
+    </details>
+
+3. `import torch.backends.cudnn as cudnn`: 为什么使用相同的网络结构，跑出来的效果完全不同，用的学习率，迭代次数，batch size 都是一样？固定随机数种子是非常重要的。但是如果你使用的是PyTorch等框架，还要看一下框架的种子是否固定了。还有，如果你用了cuda，别忘了cuda的随机数种子。这里还需要用到torch.backends.cudnn.deterministic.
+
+    `torch.backends.cudnn.deterministic`是啥？顾名思义，将这个 flag 置为`True`的话，每次返回的卷积算法将是确定的，即默认算法。如果配合上设置 Torch 的随机种子为固定值的话，应该可以保证每次运行网络的时候相同输入的输出是固定的，代码大致这样:
+    ```python
+    def init_seeds(seed=0):
+    torch.manual_seed(seed) # sets the seed for generating random numbers.
+    torch.cuda.manual_seed(seed) # Sets the seed for generating random numbers for the current GPU. It’s safe to call this function if CUDA is not available; in that case, it is silently ignored.
+    torch.cuda.manual_seed_all(seed) # Sets the seed for generating random numbers on all GPUs. It’s safe to call this function if CUDA is not available; in that case, it is silently ignored.
+
+    if seed == 0:
+        cudnn.deterministic = True
+        cudnn.benchmark = False
+    ```
+    > `torch.backends.cudnn.benchmark = true`: 大部分情况下，设置这个 flag 可以让内置的 cuDNN 的 auto-tuner 自动寻找最适合当前配置的高效算法，来达到优化运行效率的问题。<br>
+    > 一般来讲，应该遵循以下准则：    
+    > * 如果网络的输入数据维度或类型上变化不大，设置  `torch.backends.cudnn.benchmark = true`  可以增加运行效率；
+    > * 如果网络的输入数据在每次 iteration 都变化的话，会导致 cnDNN 每次都会去寻找一遍最优配置，这样反而会降低运行效率。
+    > * 为了避免计算结果的波动，设置`torch.backends.cudnn.deterministic = True`.
+
+4. 
+>>>>>>> 3a98cd2 (update)
